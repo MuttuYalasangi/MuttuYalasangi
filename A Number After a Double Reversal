@@ -1,0 +1,23 @@
+class Solution {
+    public boolean isSameAfterReversals(int num) {
+        int original = num;
+        int digit = 0;
+        int reverse = 0;
+        int x = 0;
+        while(num > 0) {
+            digit = num % 10;
+            reverse = reverse * 10 + digit;
+            num /= 10;
+        }
+        while(reverse > 0) {
+            digit = reverse % 10;
+            x = x * 10 + digit;
+            reverse /= 10;
+        }
+        if (original == x) {
+            return true;
+        }
+        return false;
+        
+    }
+}
